@@ -9,9 +9,6 @@ Template.footer.helpers({
 	playing: function() {
 		return Session.get('playing');
 	},
-	loading: function() {
-		return Session.get('loading');
-	},
 	trackLoaded: function() {
 		return Session.get('trackLoaded');
 	}

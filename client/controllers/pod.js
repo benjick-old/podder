@@ -2,6 +2,9 @@ Template.pod.helpers({
 	pod: function () {
 		return Session.get('pod');
 	},
+	loading: function() {
+		return Session.get('loading');
+	},
 	subd: function() {
 		if(!Meteor.userId()) {
 			return false;
