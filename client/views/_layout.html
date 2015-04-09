@@ -1,0 +1,19 @@
+<template name="layout">
+	<nav>
+		<div class="nav-wrapper orange accent-3">
+			<div class="container">
+				<a href="/" class="brand-logo center">podder</a>
+				<ul id="nav-mobile" class="left hide-on-med-and-down">
+					<li><a href="{{pathFor 'search'}}">Search</a></li>
+					<li>{{>loginButtons}}</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<main>
+		<div class="container">
+			{{>yield}}
+		</div>
+	</main>
+
+</template>

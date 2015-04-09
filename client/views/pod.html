@@ -1,0 +1,44 @@
+<template name="pod">
+	<h1>{{pod.collectionName}}</h1>
+	<div class="row">
+		<div class="col s12 m8">
+			{{#each pod.feed.items}}
+				<div class="card">
+					<div class="card-content">
+						<h5>{{title}}</h5>
+						<p>{{description}}</p>
+					</div>
+					<div class="card-action">
+						<a class="play"><i class="mdi-av-play-circle-fill"></i> play</a>
+					</div>
+				</div>
+			{{/each}}
+		</div>
+		<div class="col s12 m4">
+			<div class="card">
+				<div class="card-image">
+					<img src="{{pod.artworkUrl600}}">
+				</div>
+				{{#if currentUser}}
+					<div class="card-action">
+						<a href='#' class="subscribe">Subscribe</a>
+					</div>
+				{{/if}}
+			</div>
+
+			<div class="card">
+				<div class="card-content">
+					{{#if playing}}
+						<a class="waves-effect waves-light btn-large playerPause"><i class="mdi-av-pause-circle-fill left"></i>Pause</a>
+					{{else}}
+						<a class="waves-effect waves-light btn-large playerPlay"><i class="mdi-av-play-circle-fill left"></i>Play</a>
+					{{/if}}
+					<div class="progress">
+						<div class="determinate" style="width: {{progress}}%"></div>
+					</div>
+					<audio id="podcastPlayer"></audio>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

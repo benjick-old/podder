@@ -1,0 +1,44 @@
+<template name="search">
+	<form class="search">
+		<div class="input-field col s6">
+			<i class="mdi-action-search prefix"></i>
+			<input id="icon_prefix" name="term" type="text" class="validate">
+			<label for="icon_prefix">Search</label>
+		</div>
+	</form>
+	{{#if loading}}
+		<div class="center-align">
+			<div class="preloader-wrapper big active">
+				<div class="spinner-layer spinner-blue-only">
+				<div class="circle-clipper left">
+				<div class="circle"></div>
+				</div><div class="gap-patch">
+				<div class="circle"></div>
+				</div><div class="circle-clipper right">
+				<div class="circle"></div>
+				</div>
+				</div>
+			</div>
+		</div>
+	{{/if}}
+	<div class="row">
+	{{#each pods}}
+		<div class="col s12 m6 l4">
+			<div class="card">
+				<div class="card-image">
+					<img src="{{artworkUrl600}}">
+				</div>
+				<div class="card-content">
+					<p>{{collectionName}}</p>
+				</div>
+				<div class="card-action">
+					<a href="/pod/{{collectionId}}/{{slugger collectionName}}">View more</a>
+					{{#if currentUser}}
+						<a href='#'>Subscribe</a>
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	{{/each}}
+	</div>
+</template>
