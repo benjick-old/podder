@@ -60,7 +60,9 @@ Template.pod.events({
 			Pods.upsert(Meteor.userId() + '|' + pod.collectionId,
 				{$set: {
 					user: Meteor.userId(),
-					podcast: pod.collectionId
+					podcast: pod.collectionId,
+					art: pod.artworkUrl600,
+					title: pod.collectionName
 				}}
 			)
 		};
