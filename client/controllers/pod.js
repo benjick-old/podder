@@ -19,7 +19,6 @@ Template.pod.helpers({
 
 Template.pod.events({
 	'click .play': function () {
-		console.log(Meteor.userId() + '|' + this.image);
 		if(Meteor.userId()) {
 			var timelookup = Casts.findOne(Meteor.userId() + '|' + this.image);
 		}

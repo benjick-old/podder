@@ -11,7 +11,6 @@ Template.search.events({
   	Session.set('loading', true);
   	Session.set('pods', false);
     Meteor.call('searchPods', event.target.term.value, function(err, data) {
-    	console.log(data);
       Session.set('pods', data);
       Session.set('loading', false);
     });
