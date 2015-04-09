@@ -67,7 +67,8 @@ Template.pod.onRendered(function() {
 				{$set: {
 					current: Math.floor(player.currentTime),
 					duration: Math.ceil(player.duration),
-					progress: progress
+					progress: progress,
+					user: Meteor.userId()
 				}}
 			)
 		}
