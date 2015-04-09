@@ -10,6 +10,9 @@ Template.pod.helpers({
 	progress: function() {
 		return Session.get('progress');
 	},
+	progressHuman: function() {
+		return Session.get('progressHuman');
+	},
 	playing: function() {
 		return Session.get('playing');
 	},
@@ -50,6 +53,7 @@ Template.pod.onRendered(function() {
 	player.addEventListener("timeupdate", function() {
 		var progress = player.currentTime / player.duration * 100;
 		Session.set('progress', progress);
+		Session.set('progressHuman', Math.floor(player.currentTime) + "/" + Math.ceil(player.duration));
 		if(Meteor.userId()) {
 			Casts.upsert(Meteor.userId() + '|' + player.src, 
 				{$set: {
