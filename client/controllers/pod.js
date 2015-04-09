@@ -23,11 +23,11 @@ Template.pod.helpers({
 
 Template.pod.events({
 	'click .play': function () {
-		console.log(Meteor.userId() + '|' + this.link);
+		console.log(Meteor.userId() + '|' + this.image);
 		if(Meteor.userId()) {
-			var timelookup = Casts.findOne(Meteor.userId() + '|' + this.link);
+			var timelookup = Casts.findOne(Meteor.userId() + '|' + this.image);
 		}
-		player.src = this.link;
+		player.src = this.image;
 		player.load();
 		if (typeof(timelookup) !== "undefined") {
 			player.currentTime = timelookup.current;
