@@ -35,6 +35,12 @@ Template.pod.events({
 		player.play();
 		Session.set('playing', true);
 	},
+	'click .playReset': function () {
+		player.src = this.image;
+		player.load();
+		player.play();
+		Session.set('playing', true);
+	},
 	'click .playerPause': function() {
 		Session.set('playing', false);
 		player.pause();
