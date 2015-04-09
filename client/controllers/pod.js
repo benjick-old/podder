@@ -43,6 +43,9 @@ Template.pod.events({
 	'click .playerPlay': function() {
 		Session.set('playing', true);
 		player.play();
+	},
+	'click .playerBack': function() {
+		player.currentTime = player.currentTime-15;
 	}
 
 });
