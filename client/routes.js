@@ -5,6 +5,9 @@ Router.configure({
 });
 
 Router.route('/', {
+  name: 'main'
+});
+Router.route('/search', {
   name: 'search'
 });
 
