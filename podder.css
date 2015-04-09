@@ -15,3 +15,11 @@ footer {
 main {
 	margin-bottom: 100px;
 }
+
+.page-footer {
+    opacity: 1;
+    transition: opacity 200ms;
+}
+.page-footer.animate {
+    opacity: 0;
+}
