@@ -13,3 +13,4 @@ iron:router
 accounts-password
 accounts-ui
 msavin:mongol
+percolate:synced-cron
