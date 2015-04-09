@@ -10,6 +10,7 @@
 
 * Get notifications of new podcasts
 * List most popular podcasts
+* Add security
 
 ### demo
 
