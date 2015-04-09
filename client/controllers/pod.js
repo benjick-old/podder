@@ -3,6 +3,7 @@ Template.pod.helpers({
 		Meteor.call('getPod', Router.current().params._cid, function (error, result) {
 			console.log(result);
 			Session.set('pod', result);
+			Session.set('loading', false);
 		});
 		return Session.get('pod');
 	},
@@ -11,6 +12,9 @@ Template.pod.helpers({
 	},
 	playing: function() {
 		return Session.get('playing');
+	},
+	loading: function() {
+		return Session.get('loading');
 	}
 });
 
@@ -41,6 +45,7 @@ Template.pod.events({
 });
 
 Template.pod.onRendered(function() {
+	Session.set('loading', true);
 	player = document.getElementById("podcastPlayer");
 	player.addEventListener("timeupdate", function() {
 		var progress = player.currentTime / player.duration * 100;
