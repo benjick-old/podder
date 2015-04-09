@@ -45,22 +45,6 @@
 					</div>
 				{{/if}}
 			</div>
-
-			<div class="card">
-				<div class="card-content">
-					{{#if playing}}
-						<a class="waves-effect waves-light btn playerPause"><i class="mdi-av-pause-circle-fill left"></i>Pause</a>
-					{{else}}
-						<a class="waves-effect waves-light btn playerPlay"><i class="mdi-av-play-circle-fill left"></i>Play</a>
-					{{/if}}
-					<a class="waves-effect waves-light btn playerBack"><i class="mdi-av-replay left"></i>15s</a>
-					{{progressHuman}}
-					<div class="progress">
-						<div class="determinate" style="width: {{progress}}%"></div>
-					</div>
-					<audio id="podcastPlayer"></audio>
-				</div>
-			</div>
 		</div>
 	</div>
 	{{/if}}
