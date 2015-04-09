@@ -11,6 +11,9 @@ Template.footer.helpers({
 	},
 	loading: function() {
 		return Session.get('loading');
+	},
+	trackLoaded: function() {
+		return Session.get('trackLoaded');
 	}
 });
 

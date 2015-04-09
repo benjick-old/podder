@@ -7,6 +7,9 @@ Template.pod.helpers({
 			return false;
 		}
 		var pod = Session.get('pod');
+		if(typeof(pod) === "undefined") {
+			return false;
+		}
 		return Pods.findOne(Meteor.userId() + '|' + pod.collectionId) || 0;
 	}
 });
@@ -24,6 +27,7 @@ Template.pod.events({
 		}
 		player.play();
 		Session.set('playing', true);
+		Session.set('trackLoaded', true);
 	},
 	'click .playReset': function () {
 		player.src = this.image;
