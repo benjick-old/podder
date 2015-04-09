@@ -67,3 +67,7 @@ Template.pod.onRendered(function() {
 	});
 	Session.set('loading', true);
 });
+
+Template.pod.onDestroyed(function() {
+	Session.set('pod', false);
+});
