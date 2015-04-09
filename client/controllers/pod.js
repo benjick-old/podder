@@ -13,6 +13,13 @@ Template.pod.helpers({
 	},
 	loading: function() {
 		return Session.get('loading');
+	},
+	subd: function() {
+		if(!Meteor.userId()) {
+			return false;
+		}
+		var pod = Session.get('pod');
+		return Pods.findOne(Meteor.userId() + '|' + pod.collectionId) || 0;
 	}
 });
 
@@ -46,6 +53,23 @@ Template.pod.events({
 	},
 	'click .playerBack': function() {
 		player.currentTime = player.currentTime-15;
+	},
+	'click .subscribe': function() {
+		var pod = Session.get('pod');
+		if(Meteor.userId()) {
+			Pods.upsert(Meteor.userId() + '|' + pod.collectionId,
+				{$set: {
+					user: Meteor.userId(),
+					podcast: pod.collectionId
+				}}
+			)
+		};
+	},
+	'click .unsubscribe': function() {
+		var pod = Session.get('pod');
+		if(Meteor.userId()) {
+			Pods.remove(Meteor.userId() + '|' + pod.collectionId)
+		}; 
 	}
 
 });

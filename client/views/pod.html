@@ -37,7 +37,11 @@
 				</div>
 				{{#if currentUser}}
 					<div class="card-action">
+						{{#if subd}}
+						<a class="unsubscribe">Unsubscribe</a>
+						{{else}}
 						<a class="subscribe">Subscribe</a>
+						{{/if}}
 					</div>
 				{{/if}}
 			</div>
