@@ -4,10 +4,12 @@
 
 * Search podcasts from iTunes api
 * Log in and save current playback
+* Subscribe to podcasts
 
 ### todo
 
-* Subscribe to podcasts
+* Get notifications of new podcasts
+* List most popular podcasts
 
 ### demo
 
