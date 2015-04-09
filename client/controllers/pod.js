@@ -32,7 +32,6 @@ Template.pod.events({
 		if (typeof(timelookup) !== "undefined") {
 			player.currentTime = timelookup.current;
 		}
-		console.log(timelookup);
 		player.play();
 		Session.set('playing', true);
 	},
