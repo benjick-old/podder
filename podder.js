@@ -3,9 +3,11 @@ Casts = new Mongo.Collection('casts');
 
 
 UI.registerHelper('arrayify',function(obj){
-  result = [];
-  for (var key in obj) result.push({name:key,value:obj[key]});
-  return result;
+	result = [];
+	for (var key in obj) result.push({name:key,value:obj[key]});
+	return result;
+});
+
 UI.registerHelper('round',function(float){
 	return Math.round(float);
 });
