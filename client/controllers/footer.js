@@ -45,4 +45,17 @@ Template.footer.onRendered(function() {
 			)
 		}
 	});
+	$(document).on('keydown', function (e) {
+		if(e.keyCode === 32) {
+			e.preventDefault();
+			if(Session.get('playing')) {
+				Session.set('playing', false);
+				player.pause();
+			}
+			else {
+				Session.set('playing', true);
+				player.play();
+			}
+		}
+	});
 });
