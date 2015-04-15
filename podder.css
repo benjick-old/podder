@@ -23,3 +23,7 @@ main {
 .page-footer.animate {
     opacity: 0;
 }
+
+.play, .playReset, .subscribe, .unsubscribe {
+  cursor: pointer;
+}
