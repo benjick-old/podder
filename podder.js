@@ -9,5 +9,8 @@ UI.registerHelper('arrayify',function(obj){
 });
 
 UI.registerHelper('slugger', function(string) {
-  return string.toLowerCase().replace(/-+/g, '').replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+	if(string) {
+		var result = string.toLowerCase().replace(/-+/g, '').replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+		return result;
+	}
 })
