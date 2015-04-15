@@ -35,15 +35,18 @@
 				<div class="card-image">
 					<img src="{{pod.artworkUrl600}}">
 				</div>
+				<div class="card-action">
 				{{#if currentUser}}
-					<div class="card-action">
-						{{#if subd}}
-						<a class="unsubscribe">Unsubscribe</a>
-						{{else}}
-						<a class="subscribe">Subscribe</a>
-						{{/if}}
-					</div>
+					{{#if subd}}
+					<a class="unsubscribe">Unsubscribe</a>
+					{{else}}
+					<a class="subscribe">Subscribe</a>
+					{{/if}}
+					<br>
 				{{/if}}
+					<a href="/artist/{{pod.artistId}}/{{slugger pod.artistName}}">{{pod.artistName}}</a>
+				</div>
+
 			</div>
 		</div>
 	</div>

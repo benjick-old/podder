@@ -4,5 +4,8 @@ Meteor.methods({
   },
   getPod: function (cid) {
     return Podcasts.single(cid);
+  },
+  getArtist: function (artistId) {
+    return Podcasts.lookup(artistId);
   }
 });

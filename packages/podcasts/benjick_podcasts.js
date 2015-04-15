@@ -20,6 +20,20 @@ Podcasts.search = function(term, country) {
 	// https://itunes.apple.com/search?parameterkeyvalue
 }
 
+Podcasts.lookup = function(artistId) {
+	var options = {
+		params: {
+			id: artistId,
+			entity: 'podcast',
+			sort: 'recent'
+		}
+	}
+
+	var result = HTTP.get('https://itunes.apple.com/lookup', options);
+
+	return result.data.results;
+}
+
 Podcasts.single = function(id) {
 	var options = {
 		params: {

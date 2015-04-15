@@ -17,3 +17,7 @@ Router.route('/my', {
 Router.route('/pod/:_cid/:_slug', {
   name: 'pod'
 });
+
+Router.route('/artist/:_cid/:_slug', {
+  name: 'artist'
+});
