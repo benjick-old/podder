@@ -37,8 +37,8 @@ Template.mypods.events({
 
 Template.mypods.onRendered(function() {
 	this.autorun(function() {
-		var podz = Pods.find().fetch();
-		Session.set('mypods', podz);
+		var pods = Pods.find({user: Meteor.userId()}).fetch();
+		Session.set('mypods', pods);
 		var casts = Casts.find({user: Meteor.userId(), progress: { $ne: 100 }}).fetch();
 		Session.set('mycasts', casts);
 	});
