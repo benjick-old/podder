@@ -4,6 +4,12 @@ Template.artist.helpers({
 	},
 	loading: function() {
 		return Session.get('loading');
+	},
+	isTrack: function(type) {
+		if(type === 'track') {
+			return true;
+		}
+		return false;
 	}
 });
 
