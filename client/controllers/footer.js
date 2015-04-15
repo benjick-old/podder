@@ -40,7 +40,9 @@ Template.footer.onRendered(function() {
 					current: Math.floor(player.currentTime),
 					duration: Math.ceil(player.duration),
 					progress: progress,
-					user: Meteor.userId()
+					user: Meteor.userId(),
+					src: player.src,
+					title: player.title
 				}}
 			)
 		}

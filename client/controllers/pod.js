@@ -24,6 +24,7 @@ Template.pod.events({
 		}
 		player.src = this.image;
 		player.load();
+		player.title = this.title;
 		if (typeof(timelookup) !== "undefined") {
 			player.currentTime = timelookup.current;
 		}
