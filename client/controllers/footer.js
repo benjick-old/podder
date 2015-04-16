@@ -3,8 +3,8 @@ Template.footer.helpers({
 	progress: function() {
 		return Session.get('progress');
 	},
-	progressHuman: function() {
-		return Session.get('progressHuman');
+	progressTime: function() {
+		return Session.get('progressTime');
 	},
 	playing: function() {
 		return Session.get('playing');
@@ -33,7 +33,7 @@ Template.footer.onRendered(function() {
 	player.addEventListener("timeupdate", function() {
 		var progress = player.currentTime / player.duration * 100;
 		Session.set('progress', progress);
-		Session.set('progressHuman', Math.floor(player.currentTime) + "/" + Math.ceil(player.duration));
+		Session.set('progressTime', [Math.floor(player.currentTime), Math.ceil(player.duration)]);
 		if(Meteor.userId()) {
 			Casts.upsert(Meteor.userId() + '|' + player.src, 
 				{$set: {

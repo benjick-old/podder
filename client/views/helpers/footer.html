@@ -8,7 +8,7 @@
 				<a class="orange darken-4 waves-effect waves-light btn playerPlay"><i class="mdi-av-play-circle-fill left"></i>Play</a>
 			{{/if}}
 			<a class="orange darken-4 waves-effect waves-light btn playerBack"><i class="mdi-av-replay left"></i>15s</a>
-			{{progressHuman}}
+			{{formatTime progressTime.[0]}} / {{formatTime progressTime.[1]}}
 			<div class="progress orange darken-4">
 				<div class="determinate orange accent-1" style="width: {{progress}}%"></div>
 			</div>
