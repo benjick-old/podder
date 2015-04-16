@@ -1,20 +1,5 @@
 <template name="layout">
-	<nav>
-		<div class="nav-wrapper orange accent-3">
-			<div class="container">
-				<a href="/" class="brand-logo center">podder</a>
-				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li><a href="{{pathFor 'search'}}">Search</a></li>
-					{{#if currentUser}}
-					<li><a href="{{pathFor 'mypods'}}">My pods</a></li>
-					{{/if}}
-				</ul>
-				<ul id="nav-mobile" class="left hide-on-med-and-down">
-					<li>{{>loginButtons}}</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+	{{>nav}}
 	<main>
 		<div class="container">
 			{{>yield}}
