@@ -1,6 +1,6 @@
 <template name="mypods">
 	{{#if mypods}}
-		<h1>My subscriptions</h1>
+		<h4 class="truncate">My subscriptions</h4>
 		<div class="row">
 		{{#each mypods}}
 			<div class="col s12 m6 l4">
@@ -23,7 +23,7 @@
 		</div>
 	{{/if}}
 	{{#if mycasts}}
-		<h1>My current pods</h1>
+		<h4 class="truncate">My current pods</h4>
 		<div class="row">
 		{{#each mycasts}}
 			<div class="col s12 m6 l4">
