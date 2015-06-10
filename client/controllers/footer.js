@@ -25,28 +25,28 @@ Template.footer.events({
 	},
 	'click .playerBack': function() {
 		player.currentTime = player.currentTime-15;
+	},
+	'timeupdate #podcastPlayer': function(e) {
+		var progress = e.target.currentTime / e.target.duration * 100;
+		Session.set('progress', progress);
+		Session.set('progressTime', [Math.floor(e.target.currentTime), Math.ceil(e.target.duration)]);
+		if(Meteor.userId()) {
+			Casts.upsert(Meteor.userId() + '|' + e.target.src, 
+				{$set: {
+					current: Math.floor(e.target.currentTime),
+					duration: Math.ceil(e.target.duration),
+					progress: progress,
+					user: Meteor.userId(),
+					src: e.target.src,
+					title: e.target.title
+				}}
+			)
+		}
 	}
 });
 
 Template.footer.onRendered(function() {
 	player = document.getElementById("podcastPlayer");
-	player.addEventListener("timeupdate", function() {
-		var progress = player.currentTime / player.duration * 100;
-		Session.set('progress', progress);
-		Session.set('progressTime', [Math.floor(player.currentTime), Math.ceil(player.duration)]);
-		if(Meteor.userId()) {
-			Casts.upsert(Meteor.userId() + '|' + player.src, 
-				{$set: {
-					current: Math.floor(player.currentTime),
-					duration: Math.ceil(player.duration),
-					progress: progress,
-					user: Meteor.userId(),
-					src: player.src,
-					title: player.title
-				}}
-			)
-		}
-	});
 	$(document).on('keydown', function (e) {
 		if(e.keyCode === 32) {
 			e.preventDefault();
